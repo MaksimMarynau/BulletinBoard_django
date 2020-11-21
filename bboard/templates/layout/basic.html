@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="{% static "bboard/style.css" %}">
+	<meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+	<title>{% block title %}Main{% endblock %}Bill board</title>
+</head>
+<body>
+	<header>
+		<h1>Advertisments</h1>
+	</header>
+	<nav>
+		<a href="{% url 'bboard:index' %}">MAIN</a>
+		<a href="{% url 'bboard:add' %}">ADD</a>
+		{% for rubric in rubrics %}
+			<a href="{% url 'bboard:by_rubric' rubric.pk %}">{{ rubric.name }}</a>
+		{% endfor %}
+	</nav>
+	<section>
+		{% block content %}
+			
+		{% endblock content %}
+	</section>
+</body>
+</html>
