@@ -1,2 +1,2 @@
 # Bulletin board
-## Website with bulletin
+### Simple bulletin website created with Django. 
