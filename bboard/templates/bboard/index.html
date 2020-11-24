@@ -5,6 +5,7 @@
 		<div class="b">
 			<h2>{{ bb.title }}</h2>
 			<p>{{ bb.content }}</p>
+			<p>{{ bb.price }} $</p>
 			<p> {{ bb.published|date:"d.m.Y H:i:s" }}</p>
 			<p><a href="{% url 'bboard:by_rubric' bb.rubric.pk %}"></a>{{ bb.rubric.name }}</p>
 		</div>
