@@ -4,22 +4,31 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="{% static "bboard/style.css" %}">
 	<meta http-equiv="Content-Type" content="text/html" charset="utf-8">
-	<title>{% block title %}Main{% endblock %}Bill board</title>
+	<title>{% block title %}Main{% endblock %} - bulletin board</title>
 </head>
 <body>
 	<header>
 		<h1>Advertisments</h1>
 	</header>
 	<nav>
-		<a href="{% url 'bboard:index' %}">MAIN</a>
-		<a href="{% url 'bboard:add' %}">ADD</a>
-		{% for rubric in rubrics %}
-			<a href="{% url 'bboard:by_rubric' rubric.pk %}">{{ rubric.name }}</a>
-		{% endfor %}
+		<div class="card">
+			<a href="{% url 'bboard:index' %}">Main</a>
+		</div>
+		<div class="card">
+			<a href="{% url 'bboard:add' %}">Add</a>
+		</div>
+		<div class="card">
+			Rubrics:
+			<ul>
+			{% for rubric in rubrics %}
+			<li><a href="{% url 'bboard:by_rubric' rubric.pk %}">{{ rubric.name }}</a></li>
+			{% endfor %}
+			</ul>
+		</div>
 	</nav>
 	<section>
 		{% block content %}
-			
+		
 		{% endblock content %}
 	</section>
 </body>

@@ -1,14 +1,22 @@
+*{
+	box-sizing: border-box;
+}
 header h1{
 	font-size: 40pt;
 	text-transform: uppercase;
 	text-align: center;
-	color: white;
-	background: url("bg.jpg") center/auto;
+	background-image: url("bb.png"), url("bb2.png");
+	background-position: left, right;
+	background-repeat: no-repeat, no-repeat;
+	background-size: 100px,100px;
+	padding: 20px;
+	width: 100%;
 }
 nav{
 	font-size: 16pt;
-	width: 150px;
+	width: 250px;
 	float: left;
+
 }
 nav a{
 	display: block;
@@ -16,4 +24,16 @@ nav a{
 }
 section{
 	margin-left: 170px;
+}
+.card{
+	margin: 10px;
+	padding: 10px;
+	background-color: rgb(209, 208, 208);
+	width: 70%;
+}
+.b{
+	margin: 10px;
+	padding: 20px;
+	background-color: rgb(209, 208, 208);
+	display: inline-block;
 }
